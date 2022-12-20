@@ -1,4 +1,3 @@
 node_modules
-build
+dist
 README2.md
-public/build
