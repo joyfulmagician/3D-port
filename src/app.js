@@ -307,7 +307,7 @@ Ammo().then((Ammo) => {
         new THREE.MeshPhongMaterial({ color: color }), // side
       ];
 
-      var geometry = new THREE.TextGeometry('bcExpt1123', {
+      var geometry = new THREE.TextGeometry('Danijel Baradaric', {
         font: font,
         size: 3,
         height: 0.5,
@@ -324,7 +324,7 @@ Ammo().then((Ammo) => {
 
       xMid = -0.15 * (geometry.boundingBox.max.x - geometry.boundingBox.min.x);
 
-      geometry.translate(xMid, 0, 0);
+      geometry.translate(xMid, 5, 0);
 
       var textGeo = new THREE.BufferGeometry().fromGeometry(geometry);
 
@@ -373,7 +373,7 @@ Ammo().then((Ammo) => {
       text = new THREE.Mesh(textGeo, textMaterials);
       text.position.z = -22;
       text.position.y = 0.1;
-      text.position.x = 34;
+      text.position.x = 11;
       text.receiveShadow = true;
       text.castShadow = true;
       scene.add(text);
