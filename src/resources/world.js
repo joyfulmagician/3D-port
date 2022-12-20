@@ -233,9 +233,9 @@ export const generateGalaxy = () => {
       radius;
     const randomZ =
       Math.pow(Math.random(), parameters.randomnessPower) *
-      (Math.random() < 0.5 ? 1 : -1) *
-      parameters.randomness *
-      radius -
+        (Math.random() < 0.5 ? 1 : -1) *
+        parameters.randomness *
+        radius -
       50;
 
     positions[i3] = Math.cos(branchAngle) * radius;

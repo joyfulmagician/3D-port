@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { WEBGL } from './WebGL';
 import * as Ammo from './builds/ammo';
 import { billboardTextures, boxTexture, inputText, URL, stoneTexture, woodTexture } from './resources/textures';
@@ -33,7 +32,6 @@ import {
 import { simpleText, floatingLabel, allSkillsSection, createTextOnPlane } from './resources/surfaces';
 
 import { pickPosition, launchClickPosition, getCanvasRelativePosition, rotateCamera, launchHover } from './resources/utils';
-import { TextureFilter } from 'three';
 
 export let cursorHoverObjects = [];
 
@@ -77,7 +75,7 @@ Ammo().then((Ammo) => {
     let mass = 0; //mass of zero = infinite mass
 
     //create grid overlay on plane
-    var grid = new THREE.GridHelper(175, 10, 0xffffff, 0xffffff);
+    var grid = new THREE.GridHelper(175, 20, 0xffffff, 0xffffff);
     grid.material.opacity = 0.5;
     grid.material.transparent = true;
     grid.position.y = 0.005;
@@ -123,10 +121,10 @@ Ammo().then((Ammo) => {
 
   // create ball
   function createBall() {
-    let pos = { x: 0, y: 0, z: 0 };
-    let radius = 3;
+    let pos = { x: 8.75, y: 0, z: 0 };
+    let radius = 2;
     let quat = { x: 0, y: 0, z: 0, w: 1 };
-    let mass = 5;
+    let mass = 3;
 
     var marble_loader = new THREE.TextureLoader(manager);
     var marbleTexture = marble_loader.load('./src/jsm/earth.jpg');
@@ -145,16 +143,6 @@ Ammo().then((Ammo) => {
 
     ball.castShadow = true;
     ball.receiveShadow = true;
-
-    // const loader = new GLTFLoader();
-
-    // loader.load('./src/jsm/model.gltf', function (object) {
-    //   console.log(object.animations)
-    //   scene.add(object.scene);
-    //   console.log(object);
-    // }, undefined, function (err) {
-    //   console.log(err);
-    // });
 
     scene.add(ball);
 
@@ -319,9 +307,9 @@ Ammo().then((Ammo) => {
         new THREE.MeshPhongMaterial({ color: color }), // side
       ];
 
-      var geometry = new THREE.TextGeometry('Mr. Tom Ford', {
+      var geometry = new THREE.TextGeometry('0xFloyd', {
         font: font,
-        size: 5,
+        size: 3,
         height: 0.5,
         curveSegments: 12,
         bevelEnabled: true,
@@ -341,7 +329,7 @@ Ammo().then((Ammo) => {
       var textGeo = new THREE.BufferGeometry().fromGeometry(geometry);
 
       text = new THREE.Mesh(geometry, textMaterials);
-      text.position.z = -30;
+      text.position.z = -20;
       text.position.y = 0.1;
       text.receiveShadow = true;
       text.castShadow = true;
@@ -363,7 +351,7 @@ Ammo().then((Ammo) => {
         new THREE.MeshPhongMaterial({ color: color }), // side
       ];
 
-      var geometry = new THREE.TextGeometry('Blockchain | Web 2.0 | Web 3.0 | AR, VR, XR | Three.js expert ', {
+      var geometry = new THREE.TextGeometry('SOFTWARE ENGINEER', {
         font: font,
         size: 1.5,
         height: 0.5,
@@ -376,7 +364,7 @@ Ammo().then((Ammo) => {
       geometry.computeBoundingBox();
       geometry.computeVertexNormals();
 
-      xMid = -0.15 * (geometry.boundingBox.max.x - geometry.boundingBox.min.x);
+      xMid = -0.5 * (geometry.boundingBox.max.x - geometry.boundingBox.min.x);
 
       geometry.translate(xMid, 0, 0);
 
@@ -385,7 +373,7 @@ Ammo().then((Ammo) => {
       text = new THREE.Mesh(textGeo, textMaterials);
       text.position.z = -20;
       text.position.y = 0.1;
-      text.position.x = -5;
+      text.position.x = 24;
       text.receiveShadow = true;
       text.castShadow = true;
       scene.add(text);
@@ -576,8 +564,8 @@ Ammo().then((Ammo) => {
     var brickLength = 3;
     var brickDepth = 3;
     var brickHeight = 1.5;
-    var numberOfBricksAcross = 10;
-    var numberOfRowsHigh = 10;
+    var numberOfBricksAcross = 6;
+    var numberOfRowsHigh = 6;
 
     pos.set(70, brickHeight * 0.5, -60);
     quat.set(0, 0, 0, 1);
@@ -585,7 +573,7 @@ Ammo().then((Ammo) => {
     for (var j = 0; j < numberOfRowsHigh; j++) {
       var oddRow = j % 2 == 1;
 
-      pos.x = 50;
+      pos.x = 60;
 
       if (oddRow) {
         pos.x += 0.25 * brickLength;
@@ -869,39 +857,9 @@ Ammo().then((Ammo) => {
 
     createBillboard(-80, 2.5, -70, billboardTextures.terpSolutionsTexture, URL.terpsolutions, Math.PI * 0.22);
 
-    createBillboard(-45, 2.5, -78, billboardTextures.bagHolderBetsTexture, URL.githubBagholder, Math.PI * 0);
+    createBillboard(-45, 2.5, -78, billboardTextures.bagHolderBetsTexture, URL.githubBagholder, Math.PI * 0.17);
 
-    createBillboardRotated(-17, 1.25, -75, billboardTextures.homeSweetHomeTexture, URL.githubHomeSweetHome, Math.PI * 0);
-
-    createBillboardRotated(-80, 2.5, -40, billboardTextures.bearxlabsTexture, URL.bearxlabsURL, Math.PI * 0.25);
-    simpleText(-60, 0.01, -37.5, 'BearXLabs.com', 1.5);
-    simpleText(-55.6, 0.01, -36, '2020-2021', 1);
-    simpleText(-60, 0.01, -33, 'Full-Stack Developer', 1.4);
-    simpleText(-60, 0.01, -30, 'BearX is a unique collection of 3,700 Genesis Bears', 1.2);
-    simpleText(-60, 0.01, -28, 'that live on the Ethereum blockchain.', 1.2);
-    simpleText(-60, 0.01, -26, 'Each BearX is randomly generated featuring a combination', 1.2);
-    simpleText(-60, 0.01, -24, 'of traits that include different breed, eyewear and clothing.', 1.2);
-    simpleText(-60, 0.01, -22, 'Only Genesis BearX yield 10 $ROOT tokens', 1.2);
-    simpleText(-60, 0.01, -20, 'per day, everyday, for the next 10 years.', 1.2);
-    simpleText(-60, 0.01, -15, 'Click on billboard to visit.', 1.2);
-
-
-    createBillboardRotated(-85, 2.5, -10, billboardTextures.scenezTexture, URL.scenezURL, Math.PI * 0.25);
-    simpleText(-60, 0.01, -7.5, 'What is Scenez?', 1.5);
-    simpleText(-55.6, 0.01, -6, '2021-2022', 1);
-    simpleText(-60, 0.01, -3, 'Lead Full-Stack Developer', 1.4);
-    simpleText(-60, 0.01, -0, `The world's first and only marketplace for 4D`, 1.2);
-    simpleText(-60, 0.01, 2, 'Experiences built within the blockchain', 1.2);
-    simpleText(-60, 0.01, 4, 'Scenez is a virtual marketplace for the exchange of digital goods', 1.2);
-    simpleText(-60, 0.01, 6, 'that is powered by two seperate core products called The', 1.2);
-    simpleText(-60, 0.01, 8, 'Marketplace and The Platform.', 1.2);
-    simpleText(-60, 0.01, 10, 'The Marketplace is where you can become a citizen of Scenez to', 1.2);
-    simpleText(-60, 0.01, 12, 'find, acquire, sell or trade our one-of-a-kind 4D experiences as', 1.2);
-    simpleText(-60, 0.01, 14, 'well as your already owned digital assets.', 1.2);
-    simpleText(-60, 0.01, 16, 'The Platform is where you get to interact with our experiences', 1.2);
-    simpleText(-60, 0.01, 18, 'and your already owned digital assets. Enjoy them with others', 1.2);
-    simpleText(-60, 0.01, 20, 'and live within the worlds our creators have deployed.', 1.2);
-    simpleText(-60, 0.01, 25, 'Click on billboard to visit.', 1.2);
+    createBillboardRotated(-17, 1.25, -75, billboardTextures.homeSweetHomeTexture, URL.githubHomeSweetHome, Math.PI * 0.15);
 
     floydWords(16.2, 1, -20);
     createTextOnPlane(-70, 0.01, -48, inputText.terpSolutionsText, 20, 40);
@@ -983,8 +941,8 @@ Ammo().then((Ammo) => {
 
     simpleText(23, 0.01, -60, touchText, 1.5);
     // simpleText(-50, 0.01, -5, 'SKILLS', 3);
-    // simpleText(-42, 0.01, -30, 'PROJECTS', 3);
-    simpleText(61, 0.01, -15, 'WORK EXPERIENCES', 3);
+    simpleText(-42, 0.01, -30, 'PROJECTS', 3);
+    simpleText(61, 0.01, -15, 'TIMELINE', 3);
 
     wallOfBricks();
     createTriangle(63, -55);
@@ -1003,12 +961,8 @@ Ammo().then((Ammo) => {
 
   //check if user's browser has WebGL capabilities
   if (WEBGL.isWebGLAvailable()) {
-    console.log("before start()")
     start();
-    console.log("after start()")
   } else {
-    console.log("before noWebGL()")
     noWebGL();
-    console.log("after noWebGL()")
   }
 });
