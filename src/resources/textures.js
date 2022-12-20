@@ -1,39 +1,39 @@
 //billboardTextures
 let billboardTextures = {};
-billboardTextures.terpSolutionsTexture = '../src/jsm/terpSolutions.png';
-billboardTextures.bagHolderBetsTexture = '../src/jsm/Bagholdersbetsbillboard.png';
-billboardTextures.homeSweetHomeTexture = '../src/jsm/home-sweet-home-portrait.png';
+billboardTextures.terpSolutionsTexture = 'jsm/terpSolutions.png';
+billboardTextures.bagHolderBetsTexture = 'jsm/Bagholdersbetsbillboard.png';
+billboardTextures.homeSweetHomeTexture = 'jsm/home-sweet-home-portrait.png';
 
 //box textures
 let boxTexture = {};
-boxTexture.Github = '../src/jsm/githubLogo.png';
-boxTexture.twitter = '../src/jsm/twitter.png';
-boxTexture.discord = '../src/jsm/discord.png';
-boxTexture.LinkedIn = '../src/jsm/linkedInLogo.png';
-boxTexture.mail = '../src/jsm/envelope.png';
-boxTexture.globe = '../src/jsm/thunder.png';
-boxTexture.reactIcon = '../src/jsm/react.png';
-boxTexture.allSkills = '../src/jsm/allSkills.png';
-boxTexture.lensFlareMain = '../src/jsm/lensflare0.png';
-boxTexture.skrillex = '../src/jsm/skrillex.png';
-boxTexture.edmText = '../src/jsm/EDM.png';
-boxTexture.writing = '../src/jsm/writing.png';
+boxTexture.Github = 'jsm/githubLogo.png';
+boxTexture.twitter = 'jsm/twitter.png';
+boxTexture.discord = 'jsm/discord.png';
+boxTexture.LinkedIn = 'jsm/linkedInLogo.png';
+boxTexture.mail = 'jsm/envelope.png';
+boxTexture.globe = 'jsm/thunder.png';
+boxTexture.reactIcon = 'jsm/react.png';
+boxTexture.allSkills = 'jsm/allSkills.png';
+boxTexture.lensFlareMain = 'jsm/lensflare0.png';
+boxTexture.skrillex = 'jsm/skrillex.png';
+boxTexture.edmText = 'jsm/EDM.png';
+boxTexture.writing = 'jsm/writing.png';
 
 //material textures
-let stoneTexture = '../src/jsm/stone.png';
-let woodTexture = '../src/jsm/woodTexture.jpg';
+let stoneTexture = 'jsm/stone.png';
+let woodTexture = 'jsm/woodTexture.jpg';
 
 //text
 let inputText = {};
-inputText.terpSolutionsText = '../src/jsm/terp-solutions-text.png';
-inputText.activities = '../src/jsm/activities_text.png';
-inputText.bagholderBetsText = '../src/jsm/bagholderbets-text.png';
-inputText.homeSweetHomeText = '../src/jsm/home-sweet-home-text.png';
-inputText.staticPortfolio = '../src/jsm/static-portfolio.png';
+inputText.terpSolutionsText = 'jsm/terp-solutions-text.png';
+inputText.activities = 'jsm/activities_text.png';
+inputText.bagholderBetsText = 'jsm/bagholderbets-text.png';
+inputText.homeSweetHomeText = 'jsm/home-sweet-home-text.png';
+inputText.staticPortfolio = 'jsm/static-portfolio.png';
 
 //SVG
 let SVG = {};
-SVG.reactLogo = '../src/jsm/react-svg.svg';
+SVG.reactLogo = 'jsm/react-svg.svg';
 
 //URLs
 let URL = {};

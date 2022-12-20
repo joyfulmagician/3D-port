@@ -1,13 +1,19 @@
 const path = require('path');
-const CompressionPlugin = require('compression-webpack-plugin');
+// const CompressionPlugin = require('compression-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: {
     app: ['@babel/polyfill', './src/app.js'],
   },
   output: {
-    path: path.resolve(__dirname, './public/build'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'app.bundle.js',
+  },
+  resolve: {
+    alias: {
+      jsm: 'src/jsm'
+    }
   },
   module: {
     rules: [
@@ -27,13 +33,26 @@ module.exports = {
       },
     ],
   },
-  plugins: [new CompressionPlugin()],
+  plugins: [
+    // new CompressionPlugin(),
+    // new HtmlWebpackPlugin({
+    //   template: 'src/index.html'
+    // }),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/jsm", to: "jsm" }, //to the dist root directory
+        { from: "*.html" },
+        { from: "*.ico" },
+        { from: "*.css" },
+      ],
+  }),
+  ],
   devServer: {
     contentBase: path.join(__dirname, ''),
     compress: true,
     watchContentBase: true,
     port: 8080,
-    host: '0.0.0.0', //your ip address
+    host: 'localhost', //your ip address
     disableHostCheck: true, //coment these out for prod
   },
   node: {
