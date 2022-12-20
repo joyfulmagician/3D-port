@@ -307,7 +307,7 @@ Ammo().then((Ammo) => {
         new THREE.MeshPhongMaterial({ color: color }), // side
       ];
 
-      var geometry = new THREE.TextGeometry('0xFloyd', {
+      var geometry = new THREE.TextGeometry('bcExpt1123', {
         font: font,
         size: 3,
         height: 0.5,
@@ -351,11 +351,11 @@ Ammo().then((Ammo) => {
         new THREE.MeshPhongMaterial({ color: color }), // side
       ];
 
-      var geometry = new THREE.TextGeometry('SOFTWARE ENGINEER', {
+      var geometry = new THREE.TextGeometry('SENIOR SOFTWARE ENGINEER', {
         font: font,
         size: 1.5,
-        height: 0.5,
-        curveSegments: 20,
+        height: 0.3,
+        curveSegments: 10,
         bevelEnabled: true,
         bevelThickness: 0.25,
         bevelSize: 0.1,
@@ -371,9 +371,9 @@ Ammo().then((Ammo) => {
       var textGeo = new THREE.BufferGeometry().fromGeometry(geometry);
 
       text = new THREE.Mesh(textGeo, textMaterials);
-      text.position.z = -20;
+      text.position.z = -22;
       text.position.y = 0.1;
-      text.position.x = 24;
+      text.position.x = 34;
       text.receiveShadow = true;
       text.castShadow = true;
       scene.add(text);
@@ -881,7 +881,8 @@ Ammo().then((Ammo) => {
     //   true
     // );
 
-    createBox(19, 2, -70, 4, 4, 1, boxTexture.twitter, URL.twitter, 0x0077b5, true);
+    // createBox(19, 2, -70, 4, 4, 1, boxTexture.twitter, URL.twitter, 0x0077b5, true);
+    createBox(19, 2, -70, 4, 4, 1, boxTexture.discord, URL.discord, 0x0077b5, true);
     // createBox(
     //   35,
     //   2,
@@ -894,7 +895,7 @@ Ammo().then((Ammo) => {
     //   false
     // );
 
-    createBox(27, 2, -70, 4, 4, 1, boxTexture.mail, 'mailto:arfloyd7@gmail.com', 0x000000, false);
+    createBox(27, 2, -70, 4, 4, 1, boxTexture.mail, URL.email , 0x000000, false);
 
     // createBox(
     //   44,
@@ -913,7 +914,7 @@ Ammo().then((Ammo) => {
 
     // floatingLabel(3.875, 4.5, -70, 'Twitter');
     floatingLabel(11.875, 4.5, -70, 'Github');
-    floatingLabel(19.125, 4.5, -70, 'Twitter');
+    floatingLabel(19.125, 4.5, -70, 'Discord');
     floatingLabel(26.875, 4.5, -70, 'Email');
     // floatingLabel(35, 6.5, -70, '  Static \nWebsite');
     floatingLabel(35, 6.5, -70, '   How I \nmade this');
