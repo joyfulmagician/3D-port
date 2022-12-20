@@ -3,8 +3,6 @@ let billboardTextures = {};
 billboardTextures.terpSolutionsTexture = '../src/jsm/terpSolutions.png';
 billboardTextures.bagHolderBetsTexture = '../src/jsm/Bagholdersbetsbillboard.png';
 billboardTextures.homeSweetHomeTexture = '../src/jsm/home-sweet-home-portrait.png';
-billboardTextures.bearxlabsTexture = '../src/jsm/bearx.png';
-billboardTextures.scenezTexture = '../src/jsm/scenez.png';
 
 //box textures
 let boxTexture = {};
@@ -40,14 +38,12 @@ SVG.reactLogo = '../src/jsm/react-svg.svg';
 let URL = {};
 URL.terpsolutions = 'https://web.archive.org/web/20200302001846/https://terpsolutions.com/';
 URL.bagholderBets = 'https://bagholder-bets.herokuapp.com';
-URL.homeSweetHomeURL = 'https://github.com/ctiptopper/home-sweet-127.0.0.1';
-URL.bearxlabsURL = 'https://bearxlabs.com/';
-URL.scenezURL = 'https://scenez.io/';
-URL.gitHub = 'https://github.com/ctiptopper/3D-portfolio';
-URL.twitter = 'https://twitter.com/TomFord';
-URL.email = 'https://mailto:ctiptopper@gmail.com';
-URL.githubBagholder = 'https://github.com/ctiptopper/bagholder-bets';
-URL.githubHomeSweetHome = 'https://github.com/ctiptopper/home-sweet-127.0.0.1';
+URL.homeSweetHomeURL = 'https://github.com/0xFloyd/home-sweet-127.0.0.1';
+URL.gitHub = 'https://github.com/0xFloyd/Portfolio_2020';
+URL.twitter = 'https://twitter.com/0xFloyd';
+URL.email = 'https://mailto:xfloyd.eth@gmail.com';
+URL.githubBagholder = 'https://github.com/0xFloyd/bagholder-bets';
+URL.githubHomeSweetHome = 'https://github.com/0xFloyd/home-sweet-127.0.0.1';
 URL.devTo = 'https://dev.to/0xfloyd/create-an-interactive-3d-portfolio-website-that-stands-out-to-employers-47gc';
 
 export { billboardTextures, boxTexture, inputText, URL, stoneTexture, woodTexture };
